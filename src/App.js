@@ -1,6 +1,6 @@
 import React from 'react'
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Header from './components/Header';
+import Header from './components/Header';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,32 +10,19 @@ function App() {
   return ( 
     <div className="App">
       <header className="App-header">
-        <h1>
-          Coffee Matches
-        </h1>
-        <a
-          className="App-link"
-          href="https://www.coffeematches.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Referral Hub
-        </a>
-      {/* <Router> */}
-          {/* <Header />
-          <Switch>
+              <Router>          
+          <Header />
+          <Routes>
 
-            <Route exact path="/"></Route> */}
-            <Home />
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/referees" element={<Referees />}></Route>
 
-            {/* <Route path="/about"><About /></Route> */}
-            <About />
+          </Routes>
+        </Router>
+        
 
-            {/* <Route path="/referees"><Referees /></Route> */}
-            <Referees />
 
-          {/* </Switch>
-        </Router> */}
         </header>
     </div>
   );
